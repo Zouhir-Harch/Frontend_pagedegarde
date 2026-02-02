@@ -84,7 +84,7 @@ function App() {
           : []
       };
 
-      const response = await axios.post('http://localhost:3000/api/generate', {
+      const response = await axios.post('http://backendlatex-production.up.railway.app/api/generate', {
         data: data,
         style: selectedStyle
       });
@@ -101,7 +101,7 @@ function App() {
   // Télécharger le PDF
   const handleDownload = () => {
     if (!result?.pdfUrl) return;
-    const url = 'http://localhost:3000' + result.pdfUrl;
+    const url = 'http://backendlatex-production.up.railway.app' + result.pdfUrl;
     const link = document.createElement('a');
     link.href = url;
     link.download = 'page-de-garde.pdf';
